@@ -9,6 +9,7 @@ Beat detection drives border glow, particle bursts and colour shifts
 
 ## Notes
 No playlist memory - tracks are loaded one at a time and loop until replaced. Full playlist support will be added in the future.
+
 Border glow might be too intense and jittery during music. This will be fixed in the future.
 
 ## Live Link 
