@@ -1,10 +1,3 @@
-The issue happens because the strict beat-detection threshold (`bass > avg * 1.28`) is highly dependent on the track's mixing. If a song has a continuous baseline or a quick intro spike, the rolling history buffer adapts too fast, causing the threshold to become mathematically impossible to hit. When it stops detecting beats, the border pulse decays to zero and gets stuck on a single static color (HSL `0`, which is solid **red**).
-
-To fix this and make it completely bulletproof, we can change the formula to **Direct-Drive Responsive Scaling**. Instead of waiting for a finicky threshold binary hit, the border's glow, width, and color shifting will dynamically scale to the *exact real-time volume of the bass frequencies* on every single frame, mixed with a continuous spectral hue rotation.
-
-Here is the fully fixed, ultra-responsive version:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
